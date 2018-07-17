@@ -1,0 +1,644 @@
+/******************************************************************
+Site Name: [CLIENT NAME]'s Custom Theme
+Author: WebDrafter.com
+
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+------------ MAP ------------
+
+GENERAL STYLES
+WORDPRESS BODY CLASSES
+LAYOUT & GRID STYLES
+LINK STYLES
+H1, H2, H3, H4, H5 STYLES
+HEADER STYLES
+NAVIGATION STYLES
+POSTS & CONTENT STYLES
+PAGE NAVI STYLES
+COMMENT STYLES
+COMMENT FORM STYLES
+SIDEBARS & ASIDES
+FOOTER STYLES
+
+******************************************************************/
+
+/******************************************
+GENERAL STYLES
+******************************************/
+
+html, body {
+	height: 100%;
+	font-family: @sans-serif; 
+	font-size: 15px;
+	line-height: 1.5;
+	background-color: @white;
+}
+
+	#background-main {
+		width:100%;
+		background-color:@white;
+	}
+	
+	#background-navigation {
+		display:none;
+	}
+
+	.divider {
+		display:block;
+		width:100%;
+		height:2px;
+		margin:10px auto;
+		background-color:@lightgrey;
+	}
+	
+	
+/******************************************
+MOBILE CHEATS
+******************************************/	
+
+	.show {
+		display:block;
+	}
+	.hide {
+		display:none;
+	}
+
+/******************************************
+LAYOUT & GRID STYLES
+******************************************/
+
+.wrap {
+	width: 96%;
+	margin: 0 auto;
+}
+#container {
+	min-height:100%;
+	position:relative;
+}
+
+/******************************************
+LINK STYLES
+******************************************/
+
+a {
+	color: @link-color;
+	text-decoration:none;
+
+	/* on hover */
+	&:hover, &:focus {
+		color: @link-hover;
+	}
+
+	/* on click */
+	&:active {
+
+	}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	font-family: @sans-serif;
+	font-weight: 600;
+	/*
+	if you're going to use webfonts, be sure to check your weights
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+	
+}
+
+h1, .h1 {
+	font-size: 2.5em;
+	line-height: 1.333em;
+	margin:0 0 8px 0;
+}
+
+h2, .h2 {
+	font-size: 1.75em;
+	line-height: 1.4em;
+	margin:0 0 10px 0;
+}
+
+h3, .h3 {
+	font-size: 1.125em;
+	margin:8px 0;
+}
+
+h4, .h4 {
+	font-size: 1.1em;
+	font-weight: 700;
+	margin:0 0 8px 0;
+}
+
+h5, .h5 {
+	font-size: 0.846em;
+	line-height: 2.09em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin:0 0 8px 0;
+}
+
+/******************************************
+HEADER STYLES
+******************************************/
+
+.header {
+	display:block;
+	padding-top:75px;
+	
+	.contact-header {
+		text-align:right;
+		
+		.Social_Widget {
+			margin:0;
+		}
+		
+		p {
+			span {
+				font-weight:600;
+			}
+		}
+		
+	}
+	
+	#inner-header {
+		display:none;
+	}
+
+	#logo {}
+	
+}
+
+/******************************************
+NAVIGATION STYLES
+******************************************/
+
+/*********************
+MOBILE NAVIGATION 
+*********************/
+
+#mobile-menu-wrap {
+	display:block;
+	width:100%;
+	background-color:@blue;
+	position:fixed;
+	height:60px;
+	text-align:right;
+	z-index:10;
+	padding:10px 10px;
+	
+	#logo {
+		display:block;
+		height:auto;
+		max-height:45px;
+		width:auto;
+		float:left;
+		max-width:200px;
+	}
+	
+	#phone-link {
+		text-align:center;
+		font-size:95%;
+		color:@white;
+		font-weight:700;
+		line-height:1.2;
+		display:block;
+		width:65%;
+		margin:5px auto 0 auto;
+		a {
+			text-decoration:none;
+			color:@white;
+		}
+	}
+	
+	.menu-toggle-button {
+		position:absolute;
+		right:10px;
+		top:12px;
+		#menu-toggle {
+			font-size:0;
+			font-weight:700;
+			color:@white;
+			text-align:center;
+			text-decoration:none;
+			padding:6px 10px;
+			-webkit-border-radius: 8px;
+			border-radius: 8px;
+			width:50px;
+			line-height:1;
+			cursor:pointer;
+			height:38px;
+			background: #4c4c4c; /* Old browsers */
+			background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(39%,#474747), color-stop(50%,#2c2c2c), color-stop(51%,#000000), color-stop(60%,#111111), color-stop(76%,#2b2b2b), color-stop(91%,#1c1c1c), color-stop(100%,#131313)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* IE10+ */
+			background: linear-gradient(to bottom, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */	
+			&:before {
+				font-family: 'icomoon';
+				content:'\f0c9';
+				font-size:24px;
+			}
+			
+		}
+	}
+
+}
+	.mobile-menu-toggle { display: none; }
+	.anchor-link, #mobile-nav { display: block; }
+
+	.mobile-menu-open {
+		.boxShadow(0,2,5px,0,@lightgrey);
+		display: block;
+		list-style: none outside none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		right: 0;
+		top: 59px;
+		width: 100%;
+		z-index: 500; 
+		border: 1px solid @lightgrey;
+		border-bottom: 0;
+		
+		ul {
+			margin:0;
+			padding:0;
+			text-align:center;
+		}
+	 	
+		li {
+			display: block; 
+			padding:0; 
+			list-style: none; 
+			text-align: center;
+			opacity:.95;
+				
+			a {
+				display: block; 
+				padding: 10px; 
+				border-bottom: 1px solid @lightgrey; 
+				text-decoration: none;
+				color:@white;
+				background-color:@blue;
+			}
+			
+			&:hover, &:focus {
+				opacity:1;
+				color:@white;
+			}
+		}
+	}
+
+/******************************************
+08. POSTS & CONTENT STYLES
+******************************************/
+
+.serviceblock {
+	margin:50px auto; 
+	
+	h3 {
+		display:block;
+		width:100%;
+		padding:10px;
+		text-transform:uppercase;
+		background-color:@grey;
+		color:@white;
+		text-align:center;
+		margin:0;
+	}
+	div {
+		background-color:@lightgrey;
+		min-height:80px;
+		padding:20px;
+	}
+}
+
+#content {
+	padding: 1em 0;
+
+	#inner-content {}
+
+		.bullet {
+		
+			li{
+				list-style-image:url(../images/webdrafter.com-bullet.png);
+			}
+		
+		}
+
+		/* post meta */
+		.byline {
+			color: @lightblue;
+
+			time {}
+		}
+
+		/* entry content */
+		.entry-content {
+
+			p {}
+
+
+			ul, ol, table, dl {}
+
+			ul, ol {
+				padding:5px 15px;
+
+				li {
+				}
+
+			}
+
+			ul {
+
+				li{
+					list-style-image:url(../images/webdrafter.com-bullet.png);
+				}
+
+			}
+
+			ol {
+
+				li {
+					list-style:decimal;
+				}
+
+			}
+
+			dd {
+				margin-left: 0;
+				font-size: 0.9em;
+				color: #787878;
+				margin-bottom: 1.5em;
+			}
+
+			img {
+				margin: 0 0 1.5em 0;
+				max-width: 100%;
+				height: auto;
+			}
+
+			video, object {
+				max-width: 100%;
+				height: auto;
+			}
+
+			pre {
+				background: #eee;
+				border: 1px solid #cecece;
+				padding: 10px;
+			}
+
+		} /* end .entry-content */
+
+		.wp-caption {
+			max-width: 100%;
+			background: #eee;
+			padding: 5px;
+
+			/* images inside wp-caption */
+			img {
+				max-width: 100%;
+				margin-bottom: 0;
+				width: 100%;
+			}
+
+			p.wp-caption-text {
+				font-size: 0.85em;
+				margin: 4px 0 7px;
+				text-align: center;
+			}
+
+		} /* end .wp-caption */
+
+}
+
+/******************************************************************
+PAGE NAVI STYLES
+******************************************************************/
+
+.page-navigation,
+.wp-prev-next {
+	margin: 1.1em 0 2.2em;
+}
+	.webdraftertheme_page_navi {
+		width:100%;
+		display:block;
+
+		li {
+			float: left;
+			margin-left: 10px;
+			display:block;
+
+			a {
+				padding: 3px 6px;
+				display: block;
+				text-decoration: none;
+				position: relative;
+
+				&:hover,
+				&:focus {
+					color: #f01d4f;
+					text-decoration: underline;
+				}
+			}
+
+		}
+
+		/* current page link */
+		li.bpn-current {
+			padding: 3px 6px;
+			border-bottom: 2px solid #f01d4f;
+			position: relative;
+
+			a {
+				/* hovering on current page link */
+				&:hover,
+				&:focus {}
+
+			}
+
+		} /* end .webdraftertheme_page_navi .bpn-current */
+
+		/* common styles for page-navi links */
+		li.bpn-prev-link,
+		li.bpn-next-link {
+			font-weight: 700;
+
+			a {
+				padding: 0;
+			}
+		}
+
+		/* remove the bg on end links */
+		li.bpn-prev-link a:hover,
+		li.bpn-next-link a:hover,
+		li.bpn-first-page-link a:hover,
+		li.bpn-last-page-link a:hover {
+			background: none;
+		}
+
+		/* previous link */
+		li.bpn-prev-link {
+			a {
+				&:hover,
+				&:focus {}
+			}
+		}
+
+		/* next page link */
+		li.bpn-next-link {
+			a {
+				&:hover,
+				&:focus {}
+			}
+		}
+
+		/* first page link */
+		li.bpn-first-page-link {
+			a {
+				&:hover,
+				&:focus {}
+			}
+		}
+
+		/* last page link */
+		li.bpn-last-page-link {
+			a {
+				&:hover,
+				&:focus {}
+			}
+		}
+
+	} /* end .webdraftertheme_page_navi */
+
+	/* fallback previous & next links */
+	.wp-prev-next {
+
+		ul {}
+
+		.prev-link {
+			float: left;
+		}
+
+		.next-link {
+			float: right;
+		}
+
+	} /* end .wp-prev-next */
+
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {}
+
+	.widgettitle {
+		
+		}
+
+	.widget {
+
+		ul {
+
+			li {
+
+				&:first-child {}
+
+				&:last-child {}
+
+				a {}
+
+				/* deep nesting */
+				ul {}
+
+			}
+
+		}
+
+	}
+
+/***************************************************************
+FOOTER STYLES
+***************************************************************/
+
+.footer {
+	padding:20px 0 0 0;
+	width:100%;
+	background-color:@grey;
+	#inner-footer {
+	}
+	nav {
+		ul {
+			li {
+				a {
+					color:@black;
+				}
+
+				&:first-child {}
+
+				&:last-child {}
+			}
+		}
+	}
+}
+
+	/*
+	if you checked out the link above:
+	http://www.alistapart.com/articles/organizing-mobile/
+	you'll want to style the footer nav
+	a bit more in-depth. Remember to keep
+	it simple because you'll have to
+	override these styles for the desktop
+	view.
+	*/
+	.footer-links {
+		display:none;
+	} /* end .footer-links */
+
+/******************************
+AUTHOR CREDITS AND COPYRIGHT
+*******************************/
+
+.author-credits {
+	
+	.copyright {
+		display:block;
+		color:#a9a9a9;
+		width:100%;
+		font-size:100%;
+	}
+	.credits {
+		display:block;
+		color:#a9a9a9;
+		width:100%;
+		text-align:left;
+		font-size:100%;
+		
+		a {
+			text-decoration:none;
+			color:#a9a9a9;
+		}
+	}
+}
